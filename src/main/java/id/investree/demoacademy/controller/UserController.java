@@ -17,7 +17,7 @@ public class UserController  {
 
 
     @Autowired
-    public UserController(@Qualifier("Joko") UserService userService) {
+    public UserController(@Qualifier("UserServiceImplement") UserService userService) {
         this.userService = userService;
     }
 
