@@ -10,6 +10,6 @@ public interface UserService {
     User getUser(Long id);
     User saveUser(User user);
     User updateUser(Long id, User user);
-    String deleteUser(String id);
+    String deleteUser(Long id);
 
 }

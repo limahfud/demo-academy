@@ -3,6 +3,7 @@ package id.investree.demoacademy.controller;
 import id.investree.demoacademy.model.User;
 import id.investree.demoacademy.service.UserService;
 import id.investree.demoacademy.service.UserServiceImpl;
+import id.investree.demoacademy.service.UserServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -15,9 +16,8 @@ public class UserController  {
 
     private UserService userService;
 
-
     @Autowired
-    public UserController(@Qualifier("Joko") UserService userService) {
+    public UserController(@Qualifier("UserServiceImplement") UserService userService) {
         this.userService = userService;
     }
 
@@ -42,7 +42,9 @@ public class UserController  {
         return userService.updateUser(id, user);
     }
 
-    public String deleteUser(String id) {
+    @DeleteMapping
+    public String deleteUser(Long id) {
+        userService.deleteUser(id);
         return "Success";
     }
 

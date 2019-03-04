@@ -8,17 +8,17 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service("Joko")
+@Service("UserServiceImpl")
 public class UserServiceImpl implements UserService {
 
     private List<User> users = new ArrayList<User>();
 
     UserServiceImpl() {
-        users.add(new User(1, "Andi", 20, Gender.MALE, "Bekasi"));
-        users.add(new User(2, "Budi", 25, Gender.MALE, "Tangerang"));
-        users.add(new User(3, "Cynthia", 15, Gender.FEMALE, "Bekasi"));
-        users.add(new User(4, "Danny", 23, Gender.MALE, "Bogor"));
-        users.add(new User(5, "Erika", 2, Gender.FEMALE, "Jaksel"));
+        users.add(new User(1, "Andi", 20, "male", "Bekasi"));
+        users.add(new User(2, "Budi", 25, "male", "Tangerang"));
+        users.add(new User(3, "Cynthia", 15, "female", "Bekasi"));
+        users.add(new User(4, "Danny", 23, "male", "Bogor"));
+        users.add(new User(5, "Erika", 2, "female", "Jaksel"));
     }
 
     @Override
@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String deleteUser(String id) {
+    public String deleteUser(Long id) {
         return null;
     }
 }

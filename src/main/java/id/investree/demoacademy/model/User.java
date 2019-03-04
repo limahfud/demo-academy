@@ -1,16 +1,23 @@
 package id.investree.demoacademy.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private int age;
-    private Gender gender;
+    private String gender;
     private String address;
 
     public User() {
     }
 
-    public User(long id, String name, int age, Gender gender, String address) {
+    public User(long id, String name, int age, String gender, String address) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -51,7 +58,7 @@ public class User {
     }
 
     public void setGender(String gender) {
-        this.gender = gender.equals("male") ? Gender.MALE : Gender.FEMALE;
+        this.gender = gender;
     }
 
     public void setAddress(String address) {
